@@ -13,11 +13,11 @@ const displayData = (servays) =>{
               // const statusClass = servay.isActive ? "online" : "offline";
               const statusClass = servay.isActive ? "online" : "offline"
               const servayCard = document.createElement("div")
-              servayCard.classList = "bg-[#F3F3F5] mb-5";
+              servayCard.classList = "bg-[#F3F3F5] mb-5 rounded-xl";
               servayCard.innerHTML = `
                      <div class="">
-                            <div class="flex justify-center items-center gap-10 py-10 px-10">
-                                   <div class="avatar  w-24 h-24 ${statusClass}">
+                            <div class="flex justify-center items-center gap-5 lg:gap-10 py-10 px-5 lg:px-10">
+                                   <div class="avatar w-16 h-16 lg:w-24 lg:h-24 ${statusClass}">
                                           <div class="w-24 rounded-full">
                                           <img class="" src="${servay.image}" />
                                    </div>
@@ -54,7 +54,7 @@ const handleClick = (title, view)=>{
        const titleDiv = document.createElement("div")
        titleDiv.classList = "bg-white flex justify-between p-5 my-3 rounded-md"
        titleDiv.innerHTML = `
-              <div class="flex">
+              <div class="flex w-full justify-between">
                      <h2 class="font-semibold">${title}</h2>
                      <p class="text-sm flex justify-center items-center"><i class="fa-regular fa-eye"></i> ${view}</p>
               </div>
@@ -79,15 +79,15 @@ const displayLetestPost = (letestPosts) =>{
        letestPosts.forEach(letestPost =>{
               console.log(letestPost)
               const LetestCarddiv = document.createElement("Letest-Cards-Container")
-              LetestCarddiv.classList = "card bg-base-100 w-80 shadow-xl p-5"
+              LetestCarddiv.classList = "card bg-base-100 w-full lg:w-80 shadow-xl p-5"
               LetestCarddiv.innerHTML = `
                      <figure>
                             <img
                             src="${letestPost.cover_image}"
-                            alt="Shoes" />
+                            alt="Shoes"/ class="rounded-b-2xl">
                      </figure>
                      <div class="card-body p-0">
-                     <p><i class="fa-solid fa-calendar-days"></i>  ${letestPost.author?.posted_date || "No publish date"}</p>
+                     <p class="mt-3"><i class="fa-solid fa-calendar-days"></i>  ${letestPost.author?.posted_date || "No publish date"}</p>
                      <h2 class="card-title">${letestPost.title}</h2>
                      <p>${letestPost.description}</p>
                      <div class="flex gap-3">
